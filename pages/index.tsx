@@ -16,9 +16,5 @@ export default function Home() {
     // fecthAddress();
   }, []);
 
-  return account ? (
-    <div className="bg-green-300">{account.account}</div>
-  ) : (
-    <div> no account </div>
-  );
+  return <div>hello world</div>;
 }
