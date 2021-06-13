@@ -3,7 +3,7 @@ import { useWeb3React } from '@web3-react/core'
 import { UserRejectedRequestError } from '@web3-react/injected-connector'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { injected } from '@utils/connectors'
-import useENSName from '../hooks/useENSName'
+import useENSName from '@hooks/useENSName'
 import { formatEtherscanLink, shortenHex } from '@utils/ethers'
 
 const Account = ({ triedToEagerConnect }) => {
@@ -81,7 +81,7 @@ const Account = ({ triedToEagerConnect }) => {
         rel: 'noopener noreferrer',
       }}
     >
-      {ENSName || `${shortenHex(account, 4)}`} test
+      {ENSName || `${shortenHex(account, 4)}`}
     </a>
   )
 }
