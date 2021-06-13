@@ -1,25 +1,51 @@
-import { useEffect, useState } from "react"
-import Web3 from "web3"
+import { verifyMessage } from '@ethersproject/wallet'
+import { useWeb3React } from '@web3-react/core'
+import Head from 'next/head'
+import Link from 'next/link'
+import Account from '../components/Account'
+import ETHBalance from '../components/ETHBalance'
+import useEagerConnect from '../hooks/useEagerConnect'
+import usePersonalSign, { hexlify } from '../hooks/usePersonalSign'
 
 export default function Home() {
-  const [account, setAccount] = useState({ account: "" })
+  const { account, library } = useWeb3React()
 
-  useEffect(() => {
-    const fecthAddress = async () => {
-      const web3 = new Web3(Web3.givenProvider || "http://localhost:8545")
-      const network = await web3.eth.net.getNetworkType()
-      const accounts = await web3.eth.getAccounts()
-      console.log(network) // should give you main if you're connected to the main network via metamask...
-      setAccount({ account: accounts[0] })
-    }
-    fecthAddress()
-  }, [])
+  const triedToEagerConnect = useEagerConnect()
 
-  console.log(account)
+  const sign = usePersonalSign()
 
-  return account && account.account ? (
-    <div>{account.account}</div>
-  ) : (
-    <div>not connected</div>
+  const handleSign = async () => {
+    const msg = 'NFT Gallery'
+    const sig = await sign(msg)
+    console.log(sig)
+    console.log('isValid', verifyMessage(msg, sig) === account)
+  }
+
+  const isConnected = typeof account === 'string' && !!library
+
+  return (
+    <div>
+      <Head>
+        <title>NFT Gallery</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <header>
+        <nav>
+          <Account triedToEagerConnect={triedToEagerConnect} />
+        </nav>
+      </header>
+
+      <main>
+        <h1>NFT Gallery</h1>
+
+        {isConnected && (
+          <section>
+            <ETHBalance />
+            <button onClick={handleSign}>Personal Sign</button>
+          </section>
+        )}
+      </main>
+    </div>
   )
 }
