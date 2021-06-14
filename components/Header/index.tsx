@@ -5,7 +5,7 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import React, { Fragment } from 'react'
 import Link from 'next/link'
 
-const navigation = ['Add a NFT', 'Gallery']
+const navigation = ['Add a NFT']
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')

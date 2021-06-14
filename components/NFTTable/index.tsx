@@ -1,13 +1,6 @@
-const nfts = [
-  {
-    name: 'Metaverse Explosion',
-    id: '68055...77548	',
-    slug: '/futuristic/metaverse-explosion',
-    gallery: 'Futuristic',
-  },
-]
+import Link from 'next/link'
 
-export default function NFTTable() {
+export default function NFTTable({ nfts }) {
   return (
     <div className="flex flex-col">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -49,7 +42,7 @@ export default function NFTTable() {
                 {nfts.map((nft) => (
                   <tr key={nft.id}>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      {nft.name}
+                      <Link href={`/nft/${nft.slug}`}>{nft.name}</Link>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       {nft.id}

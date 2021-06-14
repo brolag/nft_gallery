@@ -3,6 +3,17 @@ import useEagerConnect from '@hooks/useEagerConnect'
 import Header from '@components/Header'
 import NFTTable from '@components/NFTTable'
 
+// TODO: need a way to capture available nfts
+const nfts = [
+  {
+    name: 'Helping Hand',
+    id: '90473',
+    slug: 'helping-hand',
+    gallery: 'Modern',
+    contract: '0xd07dc4262bcdbf85190c01c996b4c06a461d2430',
+  },
+]
+
 export default function Home() {
   const { account, library } = useWeb3React()
   const triedToEagerConnect = useEagerConnect()
@@ -17,7 +28,7 @@ export default function Home() {
               Registered NFTs
             </h2>
           </div>
-          <NFTTable />
+          <NFTTable nfts={nfts} />
         </div>
       </main>
     </div>
