@@ -611,6 +611,13 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
+"@tailwindcss/forms@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/forms/-/forms-0.3.3.tgz#a29d22668804f3dae293dcadbef1aa6315c45b64"
+  integrity sha512-U8Fi/gq4mSuaLyLtFISwuDYzPB73YzgozjxOIHsK6NXgg/IWD1FLaHbFlWmurAMyy98O+ao74ksdQefsquBV1Q==
+  dependencies:
+    mini-svg-data-uri "^1.2.3"
+
 "@types/bn.js@^4.11.3", "@types/bn.js@^4.11.5":
   version "4.11.6"
   resolved "https://registry.yarnpkg.com/@types/bn.js/-/bn.js-4.11.6.tgz#c306c70d9358aaea33cd4eda092a742b9505967c"
@@ -3882,6 +3889,11 @@ min-document@^2.19.0:
   dependencies:
     dom-walk "^0.1.0"
 
+mini-svg-data-uri@^1.2.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/mini-svg-data-uri/-/mini-svg-data-uri-1.3.3.tgz#91d2c09f45e056e5e1043340b8b37ba7b50f4fac"
+  integrity sha512-+fA2oRcR1dJI/7ITmeQJDrYWks0wodlOz0pAEhKYJ2IVc1z0AnwJUsKY2fzFmPAM3Jo9J0rBx8JAA9QQSJ5PuA==
+
 minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/minimalistic-assert/-/minimalistic-assert-1.0.1.tgz#2e194de044626d4a10e7f7fbc00ce73e83e4d5c7"
@@ -5627,6 +5639,13 @@ swr@^0.5.6:
   dependencies:
     dequal "2.0.2"
 
+swr@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/swr/-/swr-1.0.0-beta.6.tgz#368825bbafc4cf4788fca93f47d64cc8884f24f3"
+  integrity sha512-aPl7v5/R7RSzvbI67BgUCOsOfbJ4fJEuEBU8LKzLkJGuvLiRBcYaPxt4UE7YLs2o9WEIx5FVhphJS2fOWd4RwA==
+  dependencies:
+    dequal "2.0.2"
+
 table@^5.2.3:
   version "5.4.6"
   resolved "https://registry.yarnpkg.com/table/-/table-5.4.6.tgz#1292d19500ce3f86053b05f0e8e7e4a3bb21079e"
@@ -5962,6 +5981,13 @@ url@^0.11.0:
   dependencies:
     punycode "1.3.2"
     querystring "0.2.0"
+
+use-nft@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/use-nft/-/use-nft-0.9.0.tgz#c64fe3295df84fb1f7f2353846ffab9ea600fc41"
+  integrity sha512-bfWEWunvQPhUVMo0mYfzU+VLPEqt/CyhaAOvN/dPHuRecmHK9cazLi9TvtWI8Fccy79AigznoITMvAU/ajMyrA==
+  dependencies:
+    swr "^1.0.0-beta.6"
 
 use-subscription@1.5.1:
   version "1.5.1"
