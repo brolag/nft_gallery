@@ -31,8 +31,6 @@ const Account = ({ triedToEagerConnect }) => {
 
   const ENSName = useENSName(account)
 
-  console.log('account', account)
-
   if (error) {
     return null
   }
