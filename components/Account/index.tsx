@@ -6,11 +6,15 @@ import { injected } from '@utils/connectors'
 import useENSName from '@hooks/useENSName'
 import { formatEtherscanLink, shortenHex } from '@utils/ethers'
 
+declare let window: any
+
 const Account = ({ triedToEagerConnect }) => {
   const { active, error, activate, chainId, account, setError } = useWeb3React()
 
   // initialize metamask onboarding
-  const onboarding = useRef()
+  const onboarding: {
+    current: any
+  } = useRef()
 
   useEffect(() => {
     onboarding.current = new MetaMaskOnboarding()
