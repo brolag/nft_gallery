@@ -10,11 +10,12 @@ export default function NFTShowroom() {
       <Header triedToEagerConnect={triedToEagerConnect} />
       <main>
         <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-          <div className="flex-1 min-w-0"></div>
-          <Nft
-            contract="0xd07dc4262bcdbf85190c01c996b4c06a461d2430"
-            tokenId="90473"
-          />
+          <div className="flex-1 min-w-0">
+            <Nft
+              contract="0xd07dc4262bcdbf85190c01c996b4c06a461d2430"
+              tokenId="90473"
+            />
+          </div>
         </div>
       </main>
     </div>
