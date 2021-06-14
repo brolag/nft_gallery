@@ -1,18 +1,10 @@
-/* This example requires Tailwind CSS v2.0+ */
-const people = [
+const nfts = [
   {
-    name: 'Jane Cooper',
-    title: 'Regional Paradigm Technician',
-    role: 'Admin',
-    email: 'jane.cooper@example.com',
+    name: 'Metaverse Explosion',
+    id: '68055...77548	',
+    slug: '/futuristic/metaverse-explosion',
+    gallery: 'Futuristic',
   },
-  {
-    name: 'Cody Fisher',
-    title: 'Product Directives Officer',
-    role: 'Owner',
-    email: 'cody.fisher@example.com',
-  },
-  // More people...
 ]
 
 export default function NFTTable() {
@@ -34,42 +26,39 @@ export default function NFTTable() {
                     scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
-                    Title
+                    Id
                   </th>
                   <th
                     scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
-                    Email
+                    Gallery
                   </th>
                   <th
                     scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
-                    Role
+                    Slug
                   </th>
                   <th scope="col" className="relative px-6 py-3">
                     <span className="sr-only">Edit</span>
                   </th>
                 </tr>
               </thead>
-              <tbody>
-                {people.map((person, personIdx) => (
-                  <tr
-                    key={person.email}
-                    className={personIdx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}
-                  >
+              <tbody className="bg-white divide-y divide-gray-200">
+                {nfts.map((nft) => (
+                  <tr key={nft.id}>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      {person.name}
+                      {nft.name}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {person.title}
+                      {nft.id}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {person.email}
+                      {nft.gallery}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {person.role}
+                      {nft.slug}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                       <a

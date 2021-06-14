@@ -3,6 +3,7 @@ import ETHBalance from '@components/ETHBalance'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import React, { Fragment } from 'react'
+import Link from 'next/link'
 
 const navigation = ['Add a NFT', 'Gallery']
 
@@ -19,32 +20,34 @@ export default function Header({ triedToEagerConnect }) {
               <div className="flex items-center justify-between h-16">
                 <div className="flex items-center">
                   <div className="flex-shrink-0">
-                    <img
-                      className="h-8 w-8"
-                      src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                      alt="Workflow"
-                    />
+                    <Link href="/">
+                      <img
+                        className="h-8 w-8 cursor-pointer"
+                        src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                        alt="Workflow"
+                      />
+                    </Link>
                   </div>
                   <div className="hidden md:block">
                     <div className="ml-10 flex items-baseline space-x-4">
                       {navigation.map((item, itemIdx) =>
                         itemIdx === 0 ? (
                           <Fragment key={itemIdx}>
+                            <Link href="add-nft">
+                              <a className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">
+                                {item}
+                              </a>
+                            </Link>
+                          </Fragment>
+                        ) : (
+                          <Link href="add-nft">
                             <a
-                              href="add-nft"
-                              className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+                              key={itemIdx}
+                              className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                             >
                               {item}
                             </a>
-                          </Fragment>
-                        ) : (
-                          <a
-                            key={itemIdx}
-                            href="add-nft"
-                            className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                          >
-                            {item}
-                          </a>
+                          </Link>
                         )
                       )}
                     </div>
